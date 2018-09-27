@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const busboy = require('connect-busboy');
 const busboyBodyParser = require('busboy-body-parser');
+const path = require('path');
 const app = express();
 const routes = require('./routes');
 const PORT = process.env.PORT || 8080;
@@ -15,6 +16,9 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const bcrypt = require('bcrypt');
 const User = require('./db/models/User');
+
+// Deployment
+app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
