@@ -90,6 +90,10 @@ passport.use(
 
 app.use('/api', routes);
 
+// app.get('/', function (req, res) {
+//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// });
+
 // 404 Handler:
 app.get('*', (req, res) => {
   res.status(404).send({ message: 'Page not found!' });
