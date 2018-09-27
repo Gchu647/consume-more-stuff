@@ -90,9 +90,9 @@ passport.use(
 
 app.use('/api', routes);
 
-// app.get('/', function (req, res) {
-//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
-// });
+app.get('/', function (req, res) {
+  res.sendFile(path.join('/home/george/Desktop/Final-Projects/consume-more-stuff/', 'build', 'index.html'));
+});
 
 // 404 Handler:
 app.get('*', (req, res) => {
