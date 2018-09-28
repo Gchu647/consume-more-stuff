@@ -18,7 +18,7 @@ const bcrypt = require('bcrypt');
 const User = require('./db/models/User');
 
 // Deployment
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, '..', 'build')));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -91,7 +91,7 @@ passport.use(
 app.use('/api', routes);
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join('/home/george/Desktop/Final-Projects/consume-more-stuff/', 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
 });
 
 // 404 Handler:
